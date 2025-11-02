@@ -48,3 +48,20 @@ if vim.g.neovide then
   vim.keymap.set("n", "<leader>tf", toggle_fullscreen, { desc = "Toggle Fullscreen" })
   vim.keymap.set("n", "<leader>tt", toggle_transparency, { desc = "Toggle Transparency" })
 end
+
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = {
+    name = "win32yank-wsl",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = true,
+  }
+  -- This ensures Neovim uses the clipboard register automatically
+  vim.opt.clipboard = "unnamedplus"
+end

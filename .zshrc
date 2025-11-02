@@ -109,7 +109,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+echo -ne "\e[4 q"
+# export TERM=screen-256color
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
